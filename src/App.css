@@ -224,7 +224,9 @@ main {
   color: var(--main-color);
   font-size: 1.25em;
   position: absolute;
+  text-align: center;
   top: 2em;
+  right: 1.3em;
 }
 
 
