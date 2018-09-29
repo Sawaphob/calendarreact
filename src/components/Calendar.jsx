@@ -72,7 +72,11 @@ class Calendar extends React.Component {
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
           >
-			<span className="eiei">tstkub</span>
+			      <span className="eiei">{
+              !dateFns.isSameMonth(day, monthStart)
+                ? ""
+                : dateFns.isWeekend(day)? "" : "tstkub"
+            }</span>
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
           </div>
