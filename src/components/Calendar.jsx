@@ -1,11 +1,10 @@
 import React from "react";
 import dateFns from "date-fns";
-import Popup from "reactjs-popup";
 
 class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
-    selectedDate: new Date(),
+    selectedDate: new Date()
   };
 
   renderHeader() {
@@ -72,17 +71,11 @@ class Calendar extends React.Component {
             }`}
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
-          > 
-             <div className="body">
-            {this.popupdetect1()}
-            </div>
-            <div className="body">
-            {this.popupdetect2()}
-            </div>
+          >
+			<span className="eiei">tstkub</span>
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
           </div>
-          
         );
         day = dateFns.addDays(day, 1);
       }
@@ -95,17 +88,13 @@ class Calendar extends React.Component {
     }
     return <div className="body">{rows}</div>;
   }
+
   onDateClick = day => {
+	  window.open(window.location.href + "&parameter=" + day);
     this.setState({
       selectedDate: day
     });
   };
-
-  //onDateClick = () =>{
-    //<Popup>
-    //<div>Popup content here !!</div>
-    //</Popup>
-  //};
 
   nextMonth = () => {
     this.setState({
@@ -126,34 +115,6 @@ class Calendar extends React.Component {
         {this.renderDays()}
         {this.renderCells()}
       </div>
-    );
-  }
-  popupdetect1(){
-    return(
-    <Popup trigger={<button>English Club</button>}>
-            {close => (
-          <div>
-            English Club
-           <a className="close" onClick={close}>
-             &times;
-             </a>
-          </div>
-    )}
-  </Popup>
-    );
-  }
-  popupdetect2(){
-    return(
-    <Popup trigger={<button>Conversation Cloud</button>}>
-            {close => (
-          <div>
-            Conversation Cloud
-           <a className="close" onClick={close}>
-             &times;
-             </a>
-          </div>
-    )}
-  </Popup>
     );
   }
 }
