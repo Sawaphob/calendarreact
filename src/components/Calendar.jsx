@@ -1,5 +1,6 @@
 import React from "react";
 import dateFns from "date-fns";
+import { Link } from 'react-router';
 
 class Calendar extends React.Component {
   state = {
@@ -75,7 +76,9 @@ class Calendar extends React.Component {
 			      <span className="eiei">{
               !dateFns.isSameMonth(day, monthStart)
                 ? ""
-                : dateFns.isWeekend(day)? "" : "tstkub"
+                : dateFns.isWeekend(day)? "" : 
+                //<Link to="/actinfo" style={{ textDecoration: 'none', color: '#1a8fff'}}>tstkub</Link>
+                "tstkub"
             }</span>
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
@@ -92,12 +95,12 @@ class Calendar extends React.Component {
     }
     return <div className="body">{rows}</div>;
   }
-
+  
   onDateClick = day => {
-	  window.open(window.location.href + "&parameter=" + day);
     this.setState({
       selectedDate: day
     });
+    window.open(window.location.href + "actinfo");
   };
 
   nextMonth = () => {

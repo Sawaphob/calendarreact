@@ -1,7 +1,6 @@
 import React from "react";
 
-import Calendar from "./components/Calendar";
-import "./App.css";
+//import Calendar from "./Calendar";
 
 class App extends React.Component {
   render() {
@@ -16,7 +15,7 @@ class App extends React.Component {
           </div>
         </header>
         <main>
-          <Calendar />
+          {this.props.children}
         </main>
       </div>
       
