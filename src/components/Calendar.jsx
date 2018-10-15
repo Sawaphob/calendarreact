@@ -1,6 +1,5 @@
 import React from "react";
 import dateFns from "date-fns";
-import { Link } from 'react-router';
 
 class Calendar extends React.Component {
   state = {

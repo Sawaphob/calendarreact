@@ -6,7 +6,7 @@ import "./App.css";
  */
 import App from './components/App';
 import MainPage from './components/Calendar';
-import SomePage from './components/Calendar';
+import DetailPage from './components/Detail';
 import SomeOtherPage from './components/Calendar';
 
 /**
@@ -16,7 +16,7 @@ import SomeOtherPage from './components/Calendar';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={MainPage} />
-    <Route path="/actinfo" component={SomePage} />
+    <Route path="/actinfo" component={DetailPage} />
     <Route path="/some/otherpage" component={SomeOtherPage} />
   </Route>
 );
