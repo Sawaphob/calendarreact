@@ -6,7 +6,7 @@ import "./App.css";
  */
 import App from './components/App';
 import MainPage from './components/Calendar';
-import DetailPage from './components/Detail';
+import DetailPage from './components/Detail_Teacher';
 import SomeOtherPage from './components/Calendar';
 
 /**
